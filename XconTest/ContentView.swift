@@ -10,7 +10,11 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Text("check!")
+<<<<<<< Updated upstream
+            Text("check!!")
+=======
+            Text("merge test")
+>>>>>>> Stashed changes
         }
         .padding()
     }
