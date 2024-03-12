@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
+            Text("New branch!")
             Text("merge test")
         }
         .padding()
