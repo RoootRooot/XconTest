@@ -11,7 +11,7 @@ import SwiftUI
 struct XconTestApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CustomHomeView()
         }
     }
 }

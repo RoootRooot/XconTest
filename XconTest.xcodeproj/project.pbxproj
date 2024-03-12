@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1E41937B2B9FF57A00F6A338 /* XconTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E41937A2B9FF57A00F6A338 /* XconTestApp.swift */; };
-		1E41937D2B9FF57A00F6A338 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E41937C2B9FF57A00F6A338 /* ContentView.swift */; };
 		1E41937F2B9FF57B00F6A338 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E41937E2B9FF57B00F6A338 /* Assets.xcassets */; };
 		1E4193822B9FF57B00F6A338 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E4193812B9FF57B00F6A338 /* Preview Assets.xcassets */; };
 		1E41938C2B9FF57B00F6A338 /* XconTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E41938B2B9FF57B00F6A338 /* XconTestTests.swift */; };
 		1E4193962B9FF57B00F6A338 /* XconTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4193952B9FF57B00F6A338 /* XconTestUITests.swift */; };
 		1E4193982B9FF57B00F6A338 /* XconTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4193972B9FF57B00F6A338 /* XconTestUITestsLaunchTests.swift */; };
+		1E5D52EA2BA54BEC004E4A81 /* CustomHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5D52E92BA54BEC004E4A81 /* CustomHomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		1E4193772B9FF57A00F6A338 /* XconTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XconTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E41937A2B9FF57A00F6A338 /* XconTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XconTestApp.swift; sourceTree = "<group>"; };
-		1E41937C2B9FF57A00F6A338 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1E41937E2B9FF57B00F6A338 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E4193812B9FF57B00F6A338 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1E4193872B9FF57B00F6A338 /* XconTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XconTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +43,7 @@
 		1E4193912B9FF57B00F6A338 /* XconTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XconTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E4193952B9FF57B00F6A338 /* XconTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XconTestUITests.swift; sourceTree = "<group>"; };
 		1E4193972B9FF57B00F6A338 /* XconTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XconTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1E5D52E92BA54BEC004E4A81 /* CustomHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				1E41937A2B9FF57A00F6A338 /* XconTestApp.swift */,
-				1E41937C2B9FF57A00F6A338 /* ContentView.swift */,
+				1E5D52E72BA54A2E004E4A81 /* Figma */,
+				1E5D52E82BA54A34004E4A81 /* No-Corner-Radius */,
 				1E41937E2B9FF57B00F6A338 /* Assets.xcassets */,
 				1E4193802B9FF57B00F6A338 /* Preview Content */,
 			);
@@ -125,6 +126,21 @@
 				1E4193972B9FF57B00F6A338 /* XconTestUITestsLaunchTests.swift */,
 			);
 			path = XconTestUITests;
+			sourceTree = "<group>";
+		};
+		1E5D52E72BA54A2E004E4A81 /* Figma */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Figma;
+			sourceTree = "<group>";
+		};
+		1E5D52E82BA54A34004E4A81 /* No-Corner-Radius */ = {
+			isa = PBXGroup;
+			children = (
+				1E5D52E92BA54BEC004E4A81 /* CustomHomeView.swift */,
+			);
+			path = "No-Corner-Radius";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E41937D2B9FF57A00F6A338 /* ContentView.swift in Sources */,
+				1E5D52EA2BA54BEC004E4A81 /* CustomHomeView.swift in Sources */,
 				1E41937B2B9FF57A00F6A338 /* XconTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
