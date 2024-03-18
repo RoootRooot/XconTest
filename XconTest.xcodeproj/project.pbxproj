@@ -15,6 +15,7 @@
 		1E4193982B9FF57B00F6A338 /* XconTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4193972B9FF57B00F6A338 /* XconTestUITestsLaunchTests.swift */; };
 		1E5D52EA2BA54BEC004E4A81 /* CustomHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5D52E92BA54BEC004E4A81 /* CustomHomeView.swift */; };
 		1E8021362BA80FF10092FA52 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8021352BA80FF10092FA52 /* SwiftUIView.swift */; };
+		1EF0236F2BA838980030AC14 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF0236E2BA838980030AC14 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		1E4193972B9FF57B00F6A338 /* XconTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XconTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1E5D52E92BA54BEC004E4A81 /* CustomHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHomeView.swift; sourceTree = "<group>"; };
 		1E8021352BA80FF10092FA52 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		1EF0236E2BA838980030AC14 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		1E4193792B9FF57A00F6A338 /* XconTest */ = {
 			isa = PBXGroup;
 			children = (
+				1EF0236E2BA838980030AC14 /* ContentView.swift */,
 				1E41937A2B9FF57A00F6A338 /* XconTestApp.swift */,
 				1E5D52E72BA54A2E004E4A81 /* Figma */,
 				1E5D52E82BA54A34004E4A81 /* No-Corner-Radius */,
@@ -278,6 +281,7 @@
 			files = (
 				1E5D52EA2BA54BEC004E4A81 /* CustomHomeView.swift in Sources */,
 				1E41937B2B9FF57A00F6A338 /* XconTestApp.swift in Sources */,
+				1EF0236F2BA838980030AC14 /* ContentView.swift in Sources */,
 				1E8021362BA80FF10092FA52 /* SwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
