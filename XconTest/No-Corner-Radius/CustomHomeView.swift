@@ -8,55 +8,54 @@
 import SwiftUI
 
 struct CustomHomeView: View {
-    @State private var isInventory = true
-    
     var body: some View {
         NavigationStack {
-            ScrollView(showsIndicators: false) {
-                // MARK: - Header
-                HeadPoster()
-                
-                // MARK: - Switcher
-                InventoryCategory(isInventory: $isInventory)
-                
-                // MARK: - Content
-                if isInventory {
-                    Group {
-                        SectionTitle(title: "You are low on...") {
-                            Text("Placeholder")
-                        }
-                        
-                        LowInventory()
-                        
-                        SectionTitle(title: "Others") {
-                            Text("Placeholder")
-                        }
-                        
-                        OthersSection()
+            TabView {
+                Categories()
+                    .tabItem {
+                        Label("Tab 2", systemImage: "2.circle")
                     }
-                    .transition(.asymmetric(insertion: .push(from: .leading), removal: .push(from: .trailing)))
-                } else {
-                    Group {
-                        
+                
+                Home()
+                    .tabItem {
+                        Image(systemName: "1.circle")
                     }
+            }
+        }
+    }
+}
+
+struct Categories: View {
+    let items = Array(1...10)
+    let columns = [GridItem(.flexible(), spacing: 10), GridItem(.flexible(), spacing: 10)]
+    
+    var body: some View {
+        ScrollView {
+            LazyVGrid(columns: columns, spacing: 10) {
+                ForEach(items, id: \.self) { item in
+                    Rectangle()
+                        .scaledToFit()
+                        .foregroundStyle(.black.opacity(0.5))
+                        .background {
+                            Image("sampleImage")
+                                .resizable()
+                                .scaledToFill()
+                        }
+                        .clipped()
+                        .overlay {
+                            Text("Placeholder")
+                                .font(.title)
+                                .foregroundStyle(.white)
+                                .bold()
+                        }
                 }
             }
-            .animation(.smooth, value: isInventory)
-            .ignoresSafeArea()
-            .background(Color("MainBackground"))
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Image(systemName: "person")
-                        .font(.title3)
+                ToolbarItem(placement: .principal) {
+                    Text("aweq")
                 }
-
-                
-                ToolbarItem(placement: .topBarTrailing) {
-                    Image(systemName: "bell")
-                        .font(.title3)
-                }
-
             }
+            .padding(.horizontal, 10)
         }
     }
 }
@@ -74,15 +73,15 @@ enum sample: String, CaseIterable {
 struct HeadPoster: View {
     var body: some View {
         VStack(alignment: .leading) {
-//            HStack {
-//                Image(systemName: "person")
-//                
-//                Spacer()
-//                
-//                Image(systemName: "bell")
-//            }
-//            .font(.title)
-//            .padding(.top, 60)
+            //            HStack {
+            //                Image(systemName: "person")
+            //
+            //                Spacer()
+            //
+            //                Image(systemName: "bell")
+            //            }
+            //            .font(.title)
+            //            .padding(.top, 60)
             
             Text("Welcome to XXX!")
                 .font(.title)
@@ -130,7 +129,7 @@ struct HeadPoster: View {
                 }
             }
             .tabViewStyle(.page)
-            .frame(height: 180)
+            .frame(height: 160)
             .background(Color("CardBackground"))
         }
         .padding(.horizontal)
@@ -149,54 +148,16 @@ struct HeadPoster: View {
     }
 }
 
-struct InventoryCategory: View {
-    @Binding var isInventory: Bool
-    
-    var body: some View {
-        HStack {
-            Text("Inventory")
-                .frame(maxWidth: .infinity)
-                .foregroundStyle(isInventory ? .primary : .tertiary)
-            
-            Divider()
-                .background(.primary)
-            
-            Text("Category")
-                .foregroundStyle(!isInventory ? .primary : .tertiary)
-                .frame(maxWidth: .infinity)
-        }
-        .font(.title)
-        .padding(.horizontal, 32)
-        .onTapGesture {
-            self.isInventory.toggle()
-        }
-    }
-}
-
-struct SectionTitle<Destination: View>: View {
+struct SectionTitle: View {
     var title: String
-    var destination: () -> Destination // 添加一个属性，用于传递给 NavigationLink 的 destination 视图
     
     var body: some View {
-        HStack {
-            Text(title)       
-                .font(.headline)
-
-            Spacer()
-            
-            // 使用传入的 destination 闭包作为 NavigationLink 的 destination
-            NavigationLink(destination: destination()) {
-                Text("more")
-                Image(systemName: "chevron.right")
-            }
-            .foregroundColor(.primary)
-            
-        }
-        .padding(.horizontal)
-        .padding(.top)
+        Text(title)
+            .font(.title2)
+            .bold()
+            .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
-
 
 struct LowInventory: View {
     var body: some View {
@@ -240,7 +201,7 @@ struct LowInventory: View {
 
 struct OthersSection: View {
     let series = ["Kani Series", "Unagi Series", "Shrimp Series", "Frozen Fish", "Japanese Products", "Retail Series"]
-
+    
     var body: some View {
         ForEach(series, id: \.self) { series in
             VStack {
@@ -260,12 +221,14 @@ struct OthersSection: View {
                             .frame(width: 50, height: 50)
                             .clipped()
                     }
+                    
                     Spacer()
                 }
                 .padding(.vertical)
                 
                 HStack {
                     Spacer()
+                    
                     Text("Check")
                         .padding(.vertical, 6)
                         .frame(width: 80)
@@ -285,5 +248,85 @@ struct OthersSection: View {
             .background(Color("CardBackground"))
             .padding(.horizontal)
         }
+        
+        Spacer()
+            .frame(height: 100)
+    }
+}
+
+
+//struct InventoryCategory: View {
+//    @Binding var isInventory: Bool
+//    
+//    var body: some View {
+//        HStack {
+//            Text("Inventory")
+//                .frame(maxWidth: .infinity)
+//                .foregroundStyle(isInventory ? .primary : .tertiary)
+//            
+//            Divider()
+//                .background(.primary)
+//            
+//            Text("Category")
+//                .foregroundStyle(!isInventory ? .primary : .tertiary)
+//                .frame(maxWidth: .infinity)
+//        }
+//        .font(.title)
+//        .padding(.horizontal, 32)
+//        .onTapGesture {
+//            self.isInventory.toggle()
+//        }
+//    }
+//}
+
+struct Home: View {
+    var body: some View {
+        ScrollView(showsIndicators: false) {
+            LazyVStack {
+                // MARK: - Header
+                HeadPoster()
+                
+                // MARK: - Switcher
+//                InventoryCategory(isInventory: $isInventory)
+                
+                // MARK: - Content
+                HStack {
+                    SectionTitle(title: "You are low on...")
+                    
+                    NavigationLink {
+                        
+                    } label: {
+                        Text("more")
+                        
+                        Image(systemName: "chevron.right")
+                    }
+                    .foregroundColor(.primary)
+                }
+                .padding(.top, 32)
+                .padding(.horizontal)
+                
+                LowInventory()
+                
+                SectionTitle(title: "Others")
+                    .padding(.leading)
+                    .padding(.top, 32)
+                
+                OthersSection()
+            }
+            .background(Color("MainBackground"))
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Image(systemName: "person")
+                        .font(.title3)
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    Image(systemName: "bell")
+                        .font(.title3)
+                }
+            }
+        }
+        .ignoresSafeArea()
+        
     }
 }
