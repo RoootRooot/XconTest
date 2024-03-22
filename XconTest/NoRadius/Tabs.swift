@@ -17,7 +17,9 @@ struct Tabs: View {
                 Home()
             case .categories:
                 Categories()
-            case .profile:
+            case .orders:
+                Home()
+            case .tracker:
                 Home()
             }
             
@@ -27,7 +29,9 @@ struct Tabs: View {
                 Spacer()
                 TabButton(icon: "square.grid.2x2", tab: .categories)
                 Spacer()
-                TabButton(icon: "person", tab: .profile)
+                TabButton(icon: "list.clipboard", tab: .orders)
+                Spacer()
+                TabButton(icon: "mappin.and.ellipse.circle", tab: .tracker)
                 Spacer()
             }
             .animation(.linear(duration: 0.1), value: selectedTab)
@@ -51,7 +55,8 @@ struct Tabs: View {
 enum Tab {
     case home
     case categories
-    case profile
+    case orders
+    case tracker
 }
 
 #Preview {

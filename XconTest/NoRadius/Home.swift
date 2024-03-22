@@ -11,14 +11,13 @@ struct Home: View {
     @State private var selectedTab: Tab = .home
 
     var body: some View {
-        
         ScrollView(showsIndicators: false) {
             LazyVStack {
                 // MARK: - Header
                 HeadPoster()
                 
                 // MARK: - Switcher
-                //                InventoryCategory(isInventory: $isInventory)
+//                InventoryCategory(isInventory: $isInventory)
                 
                 // MARK: - Content
                 HStack {
@@ -44,6 +43,7 @@ struct Home: View {
                 
                 OthersSection()
             }
+            .padding(.bottom, 8)
             .background(Color("MainBackground"))
         }
         .toolbar {
@@ -277,9 +277,6 @@ struct OthersSection: View {
             .background(Color("CardBackground"))
             .padding(.horizontal)
         }
-        
-        Spacer()
-            .frame(height: 100)
     }
 }
 
